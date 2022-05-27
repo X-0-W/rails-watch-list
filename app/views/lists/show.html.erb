@@ -1,0 +1,25 @@
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path("cinema_seats.jpeg") %> )" >
+  <h1> <%= @list.name %> </h1>
+  <h5 class="counter"> <%=  %></h5>
+</div>
+
+
+<div class="container flex">
+
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src= <%= bookmark.movie.poster_url %> alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"> <%= bookmark.movie.title %> </h5>
+        <h5 class="card-title"> Rating: ⭐ <%= bookmark.movie.rating %> </h5>
+        <p class="card-text"> <%= bookmark.movie.overview %> </p>
+        <p> <%= link_to "delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %> </p>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+
+<%= link_to "Add movie to list", new_list_bookmark_path(@list) %>
+<%= link_to "Return to lists", lists_path %>

@@ -11,3 +11,21 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.flex {
+  display: flex;
+}
+
+.card {
+  margin: 10px;
+  font-size: small;
+}
+
+.card-title {
+  font-size: small;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
