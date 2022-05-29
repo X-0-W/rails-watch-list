@@ -1,11 +1,15 @@
 <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path("cinema_seats.jpg") %> )" >
-  <h1>Lists</h1>
+  <h1>Create a movie list ...</h1>
+  <h3>
+    <span data-controller="typed-js"></span>
+  </h3>
+  <h3>Test</h3>
 </div>
 
 <div class="container flex">
   <% @lists.each do |list| %>
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src= "https://images.unsplash.com/photo-1599009434802-ca1dd09895e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Card image cap">
+      <%= cl_image_tag list.photo.key, crop: :fill %>
       <div class="card-body">
         <h5 class="card-title"> <%= link_to list.name, list_path(list) %> </h5>
       </div>
